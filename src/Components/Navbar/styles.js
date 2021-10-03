@@ -12,15 +12,44 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: 50,
       fontFamily: 'Dancing Script',
       fontSize: 35,
-      fontWeight:600
+      fontWeight:600,
+      color:"#ffae00",
     },
-    menuItem: {
-        paddingRight: 50
+    link:{
+      textDecoration:'none',
+      color:"#ffae00",
+      '&:hover': {
+        color:"#ffae00",
+        textDecoration:'none',
+        cursor:"pointer"
+     },
+    },
+    listItem: {
+        marginRight: 50,
+        textDecoration:'none',
+        fontFamily:'Patrick Hand',
+        fontWeight:600,
+        fontSize: 20,
+        color:"#616161",
+        '&:hover': {
+          color:"#ffae00",
+       },
     },
     menuSign:{
         backgroundColor:"#000000ff",
         opacity: 0.5,
-        color:"#FFF"
+        color:"#FFFFFF",
+        textDecoration:'none',
+        fontFamily:'Patrick Hand',
+        fontWeight:600,
+        fontSize: 18,
+        borderRadius:15,
+        '&:hover': {
+          backgroundColor:"#ffae00",
+       },
+    },
+    toolbar:{
+      padding:15
     },
   }));
 

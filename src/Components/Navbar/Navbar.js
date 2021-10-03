@@ -10,9 +10,10 @@ import {
     Slide,
     Menu,
     MenuItem,
+    Link,
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
 import useStyles from "./styles";
 
@@ -41,14 +42,16 @@ const Navbar = (props) => {
             <HideOnScroll {...props}>
                 <BrowserRouter>
                     <>
-                        <Toolbar>
+                        <Toolbar className={classes.toolbar}>
                             <Typography
                                 variant="h5"
                                 component="p"
                                 color="textSecondary"
                                 className={classes.title}
                             >
-                                Veggino
+                                <Link href="/" className={classes.link}>
+                                    Veggino
+                                </Link>
                             </Typography>
                             {isMobile ? (
                                 <>
@@ -107,58 +110,54 @@ const Navbar = (props) => {
                                 </>
                             ) : (
                                 <div style={{ marginRight: "2rem" }}>
-                                    <Button
-                                        className={classes.menuItem}
+                                    <Link
+                                        className={classes.listItem}
                                         variant="text"
                                         component={Link}
                                         to="/"
                                         color="default"
                                     >
                                         About Us
-                                    </Button>
-                                    <Button
-                                        className={classes.menuItem}
+                                    </Link>
+                                    <Link
+                                        className={classes.listItem}
                                         variant="text"
                                         component={Link}
                                         to="/Blog"
                                         color="default"
                                     >
                                         Blog
-                                    </Button>
-                                    <Button
-                                        className={classes.menuItem}
+                                    </Link>
+                                    <Link
+                                        className={classes.listItem}
                                         variant="text"
                                         component={Link}
                                         to="/Contact"
                                         color="default"
                                     >
                                         Contact
-                                    </Button>
-                                    <Button
-                                        className={classes.menuItem}
+                                    </Link>
+                                    <Link
+                                        className={classes.listItem}
                                         variant="text"
                                         component={Link}
                                         to="/Products"
                                         color="default"
                                     >
                                         Products
-                                    </Button>
+                                    </Link>
                                     <Button
                                         className={classes.menuSign}
                                         variant="text"
-                                        component={Link}
-                                        to="/Products"
-                                        color="default"
+                                        href="/login"
                                     >
                                         SignIn
                                     </Button>
-                                    <span style={{fontWeight:600, fontSize:25,padding:5}}>|</span>
+                                    <span style={{ fontWeight: 600, fontSize: 25, padding: 5 }}>|</span>
                                     <Button
                                         className={classes.menuSign}
                                         variant="text"
-                                        component={Link}
-                                        to="/Products"
-                                        color="default"
+                                        href="/signup"
                                     >
                                         Sign Up
                                     </Button>
